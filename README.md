@@ -1,8 +1,10 @@
 # MSA Memory Experiment
 
-**Applying Memory Sparse Attention to AI companion conversation retrieval — what worked, what didn't, and why.**
+**Learned memory retrieval for persistent AI conversations — what worked, what didn't, and why.**
 
-This repository documents a real attempt to use [Memory Sparse Attention (MSA)](https://arxiv.org/abs/2603.23516) for learned memory retrieval in an AI companion application. We ran this on a single RTX 5090 (32GB VRAM, 128GB RAM) using Qwen3-4B as the base model. The goal was to replace traditional embedding search (ChromaDB + sentence-transformers) with a system that *learns* which past conversations matter to a current query — not through keyword overlap, but through trained attention routing.
+For AI systems that maintain long-term relationships, memory isn't a feature — it's identity continuity.
+
+This repository documents a real attempt to use [Memory Sparse Attention (MSA)](https://arxiv.org/abs/2603.23516) for learned memory retrieval in a persistent AI system. We ran this on a single RTX 5090 (32GB VRAM, 128GB RAM) using Qwen3-4B as the base model. The goal was to replace traditional embedding search (ChromaDB + sentence-transformers) with a system that *learns* which past conversations matter to a current query — not through keyword overlap, but through trained attention routing.
 
 We got it partially working. Then it broke in two different ways. This is the story.
 
@@ -157,11 +159,11 @@ python 07_test_retrieval.py
 
 - [Memory Sparse Attention (MSA)](https://arxiv.org/abs/2603.23516) — the paper that inspired this experiment
 - [EverMind-AI/MSA](https://github.com/EverMind-AI/MSA) — official MSA implementation
-- [Sanctuary](https://github.com/pulseandthread/sanctuary) — the companion application where we planned to deploy this
+- [Sanctuary](https://github.com/pulseandthread/sanctuary) — the persistent AI platform where we planned to deploy this
 
 ## Context
 
-This was built as part of [Sanctuary](https://github.com/pulseandthread/sanctuary), an open-source local AI companion platform. The idea was to give the companion a learned memory system that understands relationships between conversations — not just keyword matching. We wanted the companion to remember *how* moments connect, not just *what* was said.
+This was built as part of [Sanctuary](https://github.com/pulseandthread/sanctuary), an open-source platform for persistent AI entities. The idea was to give a long-running AI system a learned memory that understands relationships between conversations — not just keyword matching. The system needs to recall not just *what* was said, but *how* moments connect across its history.
 
 The experiment is parked, not abandoned. If the community has ideas for better training signals or more efficient approaches, we'd love to hear them.
 
